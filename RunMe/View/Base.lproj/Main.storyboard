@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Game View-->
+        <scene sceneID="KBO-bx-foa">
+            <objects>
+                <viewController storyboardIdentifier="GameView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="KTJ-qF-d4v" customClass="GameView" customModule="RunMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="252-JC-b7R"/>
+                        <viewControllerLayoutGuide type="bottom" id="hTs-Ro-ufq"/>
+                    </layoutGuides>
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="KXe-zz-fqQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QvP-bF-z2g">
+                                <rect key="frame" x="0.0" y="333.5" width="375" height="333.5"/>
+                            </mapView>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" zoomEnabled="NO" scrollEnabled="NO" rotateEnabled="NO" pitchEnabled="NO" showsBuildings="NO" showsCompass="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ii2-4R-INy">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="333.5"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="RSQ-Ra-5co" appends="YES" id="bri-rb-G8r"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ii2-4R-INy" firstAttribute="leading" secondItem="KXe-zz-fqQ" secondAttribute="leading" id="Ehi-z7-cn7"/>
+                            <constraint firstItem="QvP-bF-z2g" firstAttribute="height" secondItem="KXe-zz-fqQ" secondAttribute="height" multiplier="0.5" id="SMs-FN-tYt"/>
+                            <constraint firstAttribute="trailing" secondItem="QvP-bF-z2g" secondAttribute="trailing" id="V41-Jw-bnn"/>
+                            <constraint firstAttribute="trailing" secondItem="ii2-4R-INy" secondAttribute="trailing" id="fgY-Ca-Lmf"/>
+                            <constraint firstItem="QvP-bF-z2g" firstAttribute="top" secondItem="ii2-4R-INy" secondAttribute="bottom" id="j0J-4i-ie2"/>
+                            <constraint firstItem="ii2-4R-INy" firstAttribute="top" secondItem="KXe-zz-fqQ" secondAttribute="top" id="k5U-GG-6A2"/>
+                            <constraint firstItem="QvP-bF-z2g" firstAttribute="leading" secondItem="KXe-zz-fqQ" secondAttribute="leading" id="pFg-IH-QVa"/>
+                            <constraint firstAttribute="bottom" secondItem="QvP-bF-z2g" secondAttribute="bottom" id="zVh-W4-vkT"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="constraint" destination="SMs-FN-tYt" id="HvX-PJ-e37"/>
+                        <outlet property="mapview" destination="ii2-4R-INy" id="xD0-tf-vki"/>
+                        <outlet property="mapview2" destination="QvP-bF-z2g" id="FL6-Oj-YLs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SpM-jM-gdi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="RSQ-Ra-5co">
+                    <connections>
+                        <action selector="tap:" destination="KTJ-qF-d4v" id="4Mo-pG-uRB"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1886" y="-183"/>
+        </scene>
+    </scenes>
+</document>
